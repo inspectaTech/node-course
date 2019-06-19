@@ -7,7 +7,7 @@ const auth = async (req, res, next) => {
     console.log("[auth] req headers",req.headers);// there is also a header onject
 
     const token = req.header('Authorization').replace("Bearer ","");
-    const decoded = jwt.verify(token, 'thisiismynewcourse');//jwt returns a decoded payload
+    const decoded = jwt.verify(token, 'thisiismynewcourse');//jwt returns a decoded payload - use the payload secret as 2nd argument
     const user = await User.findOne({  _id: decoded._id , 'tokens.token': token });
 
     if (!user) {

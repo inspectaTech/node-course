@@ -61,32 +61,32 @@ MongoClient.connect(connectionURL,{ useNewUrlParser: true}, (error, client) => {
    //     console.log("Unable to insert users",error);
    //   }//if
    //
-   //   console.log(result.ops);
+   //   console.log(result.ops);// ops: array of documents that were inserted
    //
    // });
 
    // insertMany challenge
-  // db.collection("tasks").insertMany([
-  //   {
-  //     description:"create insertMany",
-  //     completed: true
-  //   },
-  //   {
-  //     description:"insert 3 tasks",
-  //     completed: true
-  //   },
-  //   {
-  //     description:"restart the video",
-  //     completed: false
-  //   }
-  //
-  // ],(error, result) => {
-  //        if(error){
-  //          console.log("Unable to insert users",error);
-  //        }//if
-  //
-  //        console.log(result.ops);
-  // });
+  db.collection("tasks").insertMany([
+    {
+      description:"create insertMany",
+      completed: true
+    },
+    {
+      description:"insert 3 tasks",
+      completed: true
+    },
+    {
+      description:"restart the video",
+      completed: false
+    }
+
+  ],(error, result) => {
+         if(error){
+           console.log("Unable to insert tasks",error);
+         }//if
+
+         console.log(result.ops);
+  });
 
 
 })// MongoClient.connect

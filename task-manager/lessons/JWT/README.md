@@ -86,6 +86,8 @@ index.js
 #### in the models file use userSchema.methods to create your custom method
 >methods work off the lowercase (single) user object
 
+>the difference between statics and methods - statics work off the entire User model (uppercase), methods run against the individual returned user. (lowercase)
+
 models/user.js
 ```
   userSchema.methods.generateAuthToken = async function () {
